@@ -1,0 +1,24 @@
+<section class="our-work">
+    <h2>Our Work</h2>
+    <p>Real results from real clients</p>
+  
+    <div class="work-grid">
+      <div class="work-card" *ngFor="let work of works">
+        <div class="images">
+            <img [src]="work.before" alt="Before" (click)="openModal(work.before)">
+            <img [src]="work.after" alt="After" (click)="openModal(work.after)">
+        </div>
+        <h3>{{ work.name }}</h3>
+        <p>{{ work.description }}</p>
+      </div>
+    </div>
+
+    <!-- Modal -->
+  <div class="modal-backdrop" *ngIf="isModalOpen" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <span class="close-btn" (click)="closeModal()">&times;</span>
+      <img [src]="selectedImage" alt="Zoomed Image" />
+    </div>
+  </div>
+  </section>
+  

@@ -1,0 +1,46 @@
+<section class="pricing-section">
+    <h2>Our Pricing</h2>
+    <p>Choose the plan that fits your fitness journey.</p>
+  
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Basic Plan</h3>
+        <p class="price">₹999 / month</p>
+        <ul>
+          <li>Access to gym</li>
+          <li>Group sessions</li>
+          <li>1 Diet plan/month</li>
+        </ul>
+        <button (click)="openModal('Basic Plan')">Choose Plan</button>
+      </div>
+  
+      <div class="pricing-card popular">
+        <h3>Standard Plan</h3>
+        <p class="price">₹1499 / month</p>
+        <ul>
+          <li>Everything in Basic</li>
+          <li>1-on-1 Personal Training</li>
+          <li>Weekly Check-ins</li>
+        </ul>
+        <button (click)="openModal('Standard Plan')">Choose Plan</button>
+      </div>
+  
+      <div class="pricing-card">
+        <h3>Premium Plan</h3>
+        <p class="price">₹1999 / month</p>
+        <ul>
+          <li>Everything in Standard</li>
+          <li>Customized Meal Plans</li>
+          <li>Unlimited support</li>
+        </ul>
+        <button (click)="openModal('Premium Plan')">Choose Plan</button>
+      </div>
+    </div>
+
+    <app-checkout-modal
+  *ngIf="isModalOpen()"
+  [planName]="selectedPlan()"
+  (close)="closeModal()"
+></app-checkout-modal>
+  </section>
+  

@@ -1,0 +1,62 @@
+<section class="services">
+    <h2>Our Services</h2>
+    <div class="services-list">
+  
+      <div class="service-card">
+        <img src="/assets/images/personal.jpg" alt="Personal Training">
+        <h3>Personal Training</h3>
+        <p>1-on-1 training tailored to your body and goals.</p>
+        <button (click)="openModal({
+          title: 'Personal Training',
+          image: '/assets/images/personal.jpg',
+          description: '1-on-1 training tailored to your body and fitness goals with complete guidance.'
+        })">Learn More</button>
+      </div>
+  
+      <div class="service-card">
+        <img src="/assets/images/fatloss.jpg" alt="Fat Loss">
+        <h3>Fat Loss</h3>
+        <p>Fun and energetic group classes to stay fit together.</p>
+        <button (click)="openModal({
+          title: 'Fat Loss',
+          image: '/assets/images/fatloss.jpg',
+          description: 'Structured fat loss program with workouts and nutrition tips to help you lose weight safely and effectively.'
+        })">Learn More</button>
+      </div>
+  
+      <div class="service-card">
+        <img src="/assets/images/muscle.jpg" alt="Muscle Gain">
+        <h3>Muscle Gain</h3>
+        <p>Build lean muscle with expert-designed routines.</p>
+        <button (click)="openModal({
+          title: 'Muscle Gain',
+          image: '/assets/images/muscle.jpg',
+          description: 'Build lean muscle mass through customized workouts and progressive overload strategies.'
+        })">Learn More</button>
+      </div>
+  
+      <div class="service-card">
+        <img src="/assets/images/nutrition.jpg" alt="Nutrition Planning">
+        <h3>Nutrition Planning</h3>
+        <p>Customized diet plans from certified nutritionists.</p>
+        <button (click)="openModal({
+          title: 'Nutrition Planning',
+          image: '/assets/images/nutrition.jpg',
+          description: 'Get meal plans tailored to your goals, body type, and preferences to fuel your transformation.'
+        })">Learn More</button>
+      </div>
+
+  
+    </div>
+  </section>
+  
+  <!-- Modal -->
+  <div class="modal" *ngIf="selectedService" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <h2>{{ selectedService.title }}</h2>
+      <img [src]="selectedService.image" alt="{{ selectedService.title }}">
+      <p>{{ selectedService.description }}</p>
+      <button (click)="closeModal()">Close</button>
+    </div>
+  </div>
+  
