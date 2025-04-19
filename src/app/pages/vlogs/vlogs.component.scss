@@ -1,0 +1,45 @@
+.vlogs-section {
+    padding: 2rem 1rem;
+    text-align: center;
+    background: url('/assets/images/nggym.jpg') no-repeat center center/cover;
+
+    h2 {
+      margin-bottom: 2rem;
+      color: whitesmoke;
+    }
+  
+    .vlog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+  
+    .vlog-card {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+  
+      iframe {
+        position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+      }
+  
+      h4 {
+        margin: 0.5rem 0;
+      }
+  
+      p {
+        font-size: 0.9rem;
+        color: #ccc;
+      }
+    }
+  }
+  

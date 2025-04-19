@@ -22,7 +22,7 @@ export const routes: Routes = [
             import('./pages/pricing/pricing.component').then(m => m.PricingComponent),
     },
     { path: 'review', component: ReviewComponent },
-    { path: 'vlogs', component: VlogsComponent },
+    { path: 'vlogs', loadComponent: () => import('./pages/vlogs/vlogs.component').then(m => m.VlogsComponent) },
     { path: 'contact', component: ContactComponent },
 
 ];
