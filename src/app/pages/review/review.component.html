@@ -3,7 +3,9 @@
   
     <div class="review-container">
       <div class="review-card" *ngFor="let review of reviews">
-        <img [src]="review.image" alt="{{ review.name }}" class="client-img" />
+        <div class="img-container">
+          <img [src]="review.image" alt="{{ review.name }}" class="client-img" />
+        </div>
         <h3>{{ review.name }}</h3>
         <p class="stars">
           <span *ngFor="let star of [].constructor(review.rating)">⭐</span>
