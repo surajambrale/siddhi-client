@@ -61,10 +61,13 @@
     padding: 4rem 2rem;
     background: #f7f7f7;
     text-align: center;
+    background: url('/assets/images/nggym.jpg') no-repeat center center/cover;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
   
     h2 {
       font-size: 2rem;
       margin-bottom: 2rem;
+      color: whitesmoke;
     }
   
     .testimonial-cards {
