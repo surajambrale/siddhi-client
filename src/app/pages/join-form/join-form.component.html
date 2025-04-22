@@ -1,0 +1,10 @@
+<div class="form-modal">
+    <form (ngSubmit)="submitForm()" #form="ngForm">
+      <input type="text" name="name" [(ngModel)]="formData.name" placeholder="Your Name" required />
+      <input type="tel" name="phone" [(ngModel)]="formData.phone" placeholder="Your Phone" required />
+      <textarea name="message" [(ngModel)]="formData.message" placeholder="Your Message"></textarea>
+      <button type="submit">Submit</button>
+      <button type="button" (click)="close()">Close</button>
+    </form>
+  </div>
+  

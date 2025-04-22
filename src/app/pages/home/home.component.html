@@ -3,7 +3,9 @@
       <img src="assets/images/fitnesslogo.jpg" alt="Suraj Ambrale">
         <h1>Transform Your Body with Suraj Ambrale</h1>
         <p>Your journey to fitness begins here.</p>
-        <button class="cta-btn">Join Now</button>
+        <button class="cta-btn" (click)="showForm()">Join Now</button>
+        <app-join-form *ngIf="formVisible" (onClose)="hideForm()"></app-join-form>
+
     </div>
 </section>
 
