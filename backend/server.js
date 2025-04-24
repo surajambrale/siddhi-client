@@ -5,9 +5,20 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+const allowedOrigins = [
+  'https://fitnesswithsuraj.vercel.app', // ✅ production
+  'http://localhost:4200'                // ✅ development
+];
+
 // ✅ Correct CORS config
 app.use(cors({
-  origin: 'https://fitnesswithsuraj.vercel.app',
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
