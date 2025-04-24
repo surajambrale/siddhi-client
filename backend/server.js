@@ -5,6 +5,13 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+// ✅ CORS setup — yahan vercel domain allow karo
+app.use(cors({
+  origin: 'https://fitnesswithsuraj.vercel.app', // ⬅️ Allow only this domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
