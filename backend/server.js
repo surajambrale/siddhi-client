@@ -5,35 +5,30 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-// ✅ CORS setup — yahan vercel domain allow karo
+// ✅ Correct CORS config
 app.use(cors({
-  origin: 'https://fitnesswithsuraj.vercel.app', // ⬅️ Allow only this domain
+  origin: 'https://fitnesswithsuraj.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
 
-// Middleware
-app.use(cors());
+// ✅ Middleware
 app.use(bodyParser.json());
 
-// MongoDB Connection
-mongoose.connect('mongodb+srv://sambrale:sambrale@cluster0.edzdvc6.mongodb.net/suraj?retryWrites=true&w=majority&appName=Cluster0', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => console.log("MongoDB Connected"))
+// ✅ MongoDB
+mongoose.connect('mongodb+srv://sambrale:sambrale@cluster0.edzdvc6.mongodb.net/suraj?retryWrites=true&w=majority&appName=Cluster0')
+  .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
-// Mongoose Schema
+// ✅ Schema + Route
 const EnquirySchema = new mongoose.Schema({
   name: String,
   phone: String,
   message: String,
   createdAt: { type: Date, default: Date.now }
 });
-
 const Enquiry = mongoose.model('Enquiry', EnquirySchema);
 
-// Route
 app.post('/enquiries', async (req, res) => {
   try {
     const enquiry = new Enquiry(req.body);
@@ -44,7 +39,8 @@ app.post('/enquiries', async (req, res) => {
   }
 });
 
-// Start Server
-app.listen(3000, () => {
-  console.log('Server is running on http://localhost:3000');
+// ✅ Port
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
