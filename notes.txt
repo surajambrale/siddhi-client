@@ -1,0 +1,130 @@
+//server.js file
+
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+
+const app = express();
+
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
+
+// MongoDB Connection
+mongoose.connect('mongodb+srv://sambrale:sambrale@cluster0.edzdvc6.mongodb.net/suraj?retryWrites=true&w=majority&appName=Cluster0', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => console.log("MongoDB Connected"))
+  .catch(err => console.log(err));
+
+// Mongoose Schema
+const EnquirySchema = new mongoose.Schema({
+  name: String,
+  phone: String,
+  message: String,
+  createdAt: { type: Date, default: Date.now }
+});
+
+const Enquiry = mongoose.model('Enquiry', EnquirySchema);
+
+// Route
+app.post('/enquiries', async (req, res) => {
+  try {
+    const enquiry = new Enquiry(req.body);
+    await enquiry.save();
+    res.status(201).send({ message: 'Enquiry saved!' });
+  } catch (err) {
+    res.status(500).send({ error: 'Error saving enquiry' });
+  }
+});
+
+// Start Server
+app.listen(3000, () => {
+  console.log('Server is running on http://localhost:3000');
+});
+
+
+....................
+package.json file
+
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.13.2"
+  }
+}
+
+...............
+form html
+
+<div class="form-modal">
+    <form (ngSubmit)="submitForm()" #form="ngForm">
+      <input type="text" name="name" [(ngModel)]="formData.name" placeholder="Your Name" required />
+      <input type="tel" name="phone" [(ngModel)]="formData.phone" placeholder="Your Phone" required />
+      <textarea name="message" [(ngModel)]="formData.message" placeholder="Your Message"></textarea>
+      <button type="submit">Submit</button>
+      <button type="button" (click)="close()">Close</button>
+    </form>
+  </div>
+  
+...............................................
+form ts file
+
+import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-join-form',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  templateUrl: './join-form.component.html',
+  styleUrl: './join-form.component.scss'
+})
+export class JoinFormComponent {
+  @Output() onClose = new EventEmitter<void>();
+
+  formData ={
+    name: '',
+    phone:'',
+    message:''
+  };
+
+  constructor(private http: HttpClient){}
+
+  submitForm() {
+    this.http.post('http://localhost:3000/enquiries', this.formData).subscribe(() => {
+      alert("Form submitted successfully!");
+      this.close();
+    }, error => {
+      alert("Error occurred!");
+      console.error(error);
+    });
+  }
+
+  close(){
+    this.onClose.emit();
+  }
+
+}
+..................................
+
+
+
+
+
