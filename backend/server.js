@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const allowedOrigins = [
-  'https://gym-website-repo.vercel.app/', // ✅ production
+  'https://gym-website-repo.vercel.app', // ✅ production
   'http://localhost:4200'                // ✅ development
 ];
 
