@@ -22,7 +22,7 @@ export class JoinFormComponent {
   constructor(private http: HttpClient){}
 
   submitForm() {
-    this.http.post('https://gym-website-b1kh.onrender.com/enquiries', this.formData).subscribe(() => {
+    this.http.post('https://gym-website-repo.onrender.com/enquiries', this.formData).subscribe(() => {
       alert("Form submitted successfully!");
       this.close();
     }, error => {
