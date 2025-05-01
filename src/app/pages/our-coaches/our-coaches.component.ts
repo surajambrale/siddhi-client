@@ -36,4 +36,16 @@ export class OurCoachesComponent {
     
   ];
 
+  //modal
+  selectedCoach: any = null;
+
+openModal(coach: any) {
+  this.selectedCoach = coach;
+}
+
+closeModal() {
+  this.selectedCoach = null;
+}
+
+
 }

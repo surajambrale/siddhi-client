@@ -1,21 +1,66 @@
 <section class="coaches-section">
-    <h2>Meet Your Trainer</h2>
-    <div class="coach-list">
-      <div class="coach-card" *ngFor="let coach of coaches">
-        <img [src]="coach.image" [alt]="coach.name" />
-        <h3>{{ coach.name }}</h3>
-        <p>{{ coach.role }}</p>
-        <small><b>Specialization</b>: {{ coach.specialization }}</small><br>
-        <small><b>Certification</b>: {{ coach.certification }}</small>
-        <div class="social-links">
-          <a *ngIf="coach.social.instagram" [href]="coach.social.instagram" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a *ngIf="coach.social.facebook" [href]="coach.social.facebook" target="_blank">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
+  <h2>Meet Your Trainer</h2>
+  <div class="coach-list">
+    <div class="coach-card" *ngFor="let coach of coaches" (click)="openModal(coach)">
+      <img [src]="coach.image" [alt]="coach.name" />
+      <h3>{{ coach.name }}</h3>
+      <p>{{ coach.role }}</p>
+      <small><b>Specialization</b>: {{ coach.specialization }}</small><br />
+      <small><b>Certification</b>: {{ coach.certification }}</small><br>
+      <h3><b>Tap On Image to See trainer Information</b></h3>
+      <div class="social-links">
+        <a *ngIf="coach.social.instagram" [href]="coach.social.instagram" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a *ngIf="coach.social.facebook" [href]="coach.social.facebook" target="_blank">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- second trainer -->
+
+  <!-- second trainer -->
+   
+
+  <!-- Modal -->
+  <div class="modal" [class.show]="selectedCoach" (click)="closeModal()" *ngIf="selectedCoach">
+    <div class="modal-dialog" (click)="$event.stopPropagation()">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title center-title">
+            {{ selectedCoach?.name }} <hr>
+          </h3>
+          <button type="button" class="btn-close" (click)="closeModal()"></button>
+        </div>
+        <div class="modal-body">
+          <img [src]="selectedCoach?.image" [alt]="selectedCoach?.name" class="img-fluid mb-3 rounded w-100" />
+          
+          <p>
+            <strong>{{ selectedCoach?.name }}</strong> is an experienced <strong>{{ selectedCoach?.role }}</strong> 
+            specializing in <strong>{{ selectedCoach?.specialization }}</strong>. With a certification in 
+            <strong>{{ selectedCoach?.certification }}</strong>, they bring a passion for fitness and a dedication 
+            to helping clients reach their personal goals through structured and personalized training.
+          </p>
+          
+          <p>
+            Known for their motivating style and supportive approach, {{ selectedCoach?.name }} combines expertise 
+            and empathy to create lasting results. Whether you're just starting or looking to level up your routine, 
+            this coach has your back.
+          </p>
+
+          <div class="social-links mt-3">
+            <span>Connect:</span>
+            <a *ngIf="selectedCoach?.social.instagram" [href]="selectedCoach?.social.instagram" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a *ngIf="selectedCoach?.social.facebook" [href]="selectedCoach?.social.facebook" target="_blank">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>
