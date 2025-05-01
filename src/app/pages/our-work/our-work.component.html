@@ -5,9 +5,16 @@
     <div class="work-grid">
       <div class="work-card" *ngFor="let work of works">
         <div class="images">
+          <div class="image-wrapper">
             <img [src]="work.before" alt="Before" (click)="openModal(work.before)">
+            <span class="label">Before</span>
+          </div>
+          <div class="image-wrapper">
             <img [src]="work.after" alt="After" (click)="openModal(work.after)">
+            <span class="label">After</span>
+          </div>
         </div>
+        
         <h3>{{ work.name }}</h3>
         <p>{{ work.description }}</p>
       </div>
