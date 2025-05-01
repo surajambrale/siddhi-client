@@ -14,7 +14,7 @@ export class OurCoachesComponent {
     {
       name: 'Suraj Ambrale',
       role: 'Personal Trainer',
-      image: 'assets/images/dummyimg.jpeg',
+      image: 'assets/images/trainer.jpg',
       specialization: 'Fat Loss, Muscle Gain',
       certification: 'Nutritionist, Advance Fitness Trainer',
       social: {
@@ -22,17 +22,17 @@ export class OurCoachesComponent {
         facebook: 'https://facebook.com/suraj'
       }
     },
-    {
-      name: 'Suraj Ambrale',
-      role: 'Yoga Instructor',
-      image: 'assets/images/dummyimg.jpeg',
-      specialization: 'Yoga & Meditation',
-      certification: 'Nutritionist, Advance Fitness Trainer',
-      social: {
-        instagram: 'https://instagram.com/anita',
-        facebook: ''
-      }
-    }
+    // {
+    //   name: 'Suraj Ambrale',
+    //   role: 'Yoga Instructor',
+    //   image: 'assets/images/dummyimg.jpeg',
+    //   specialization: 'Yoga & Meditation',
+    //   certification: 'Nutritionist, Advance Fitness Trainer',
+    //   social: {
+    //     instagram: 'https://instagram.com/anita',
+    //     facebook: ''
+    //   }
+    // }
     
   ];
 
