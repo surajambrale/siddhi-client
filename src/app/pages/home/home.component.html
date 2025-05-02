@@ -55,7 +55,9 @@
     <div class="cta-content">
       <h2>Ready to Transform Your Body?</h2>
       <p>Book a free consultation with Suraj Ambrale and take the first step toward your fitness goals.</p>
-      <a routerLink="/contact" class="cta-button">Book Free Consultation</a>
+      <button class="cta-button" (click)="showForm()">Book Your Free Consult</button>
+        <app-join-form *ngIf="formVisible" (onClose)="hideForm()"></app-join-form>
+
     </div>
   </section>
   

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-join-form',
@@ -13,26 +13,41 @@ import { FormsModule } from '@angular/forms';
 export class JoinFormComponent {
   @Output() onClose = new EventEmitter<void>();
 
-  formData ={
+  formData = {
     name: '',
-    phone:'',
-    message:''
+    phone: '',
+    message: ''
   };
 
-  constructor(private http: HttpClient){}
+  isSubmitting = false; // Flag for loading state
 
-  submitForm() {
-    this.http.post('https://gym-website-repo.onrender.com/enquiries', this.formData).subscribe(() => {
-      alert("Form submitted successfully!");
-      this.close();
-    }, error => {
-      alert("Error occurred!");
-      console.error(error);
+  constructor(private http: HttpClient) {}
+
+  submitForm(form: NgForm) {
+    // Check if form is invalid (i.e., required fields not filled)
+    if (form.invalid) {
+      alert('Please fill out all required fields.');
+      return;
+    }
+
+    this.isSubmitting = true;
+
+    // Submit the form data to the API
+    this.http.post('https://gym-website-repo.onrender.com/enquiries', this.formData).subscribe({
+      next: () => {
+        alert('Form submitted successfully!');
+        this.isSubmitting = false;
+        this.close();
+      },
+      error: (error) => {
+        alert('Error occurred!');
+        this.isSubmitting = false;
+        console.error(error);
+      }
     });
   }
 
-  close(){
+  close() {
     this.onClose.emit();
   }
-
 }
