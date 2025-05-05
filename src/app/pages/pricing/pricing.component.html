@@ -7,9 +7,10 @@
         <h3>Basic Plan</h3>
         <p class="price">₹999 / month</p>
         <ul>
-          <li>Access to gym</li>
-          <li>Group sessions</li>
-          <li>1 Diet plan/month</li>
+          <li>- One Time Diet-Plan For Month</li>
+          <li>- Workout Plan</li>
+          <li>- Fitness Test</li>
+          <li><b>Note :"Every diet and workout plan is carefully tailored to your health status and medical conditions to ensure safe, effective, and lasting results."</b></li>
         </ul>
         <button (click)="openModal('Basic Plan')">Choose Plan</button>
       </div>
@@ -18,9 +19,11 @@
         <h3>Standard Plan</h3>
         <p class="price">₹1499 / month</p>
         <ul>
-          <li>Everything in Basic</li>
-          <li>1-on-1 Personal Training</li>
-          <li>Weekly Check-ins</li>
+          <li>- Wokout Plan As Per Your Goal</li>
+          <li>- Customized Diet-Plan</li>
+          <li>- Monthly Check-ins</li>
+          <li>- 24/7 Whatsapp-Support📱</li>
+          <li><b>Note :"Every diet and workout plan is carefully tailored to your health status and medical conditions to ensure safe, effective, and lasting results."</b></li>
         </ul>
         <button (click)="openModal('Standard Plan')">Choose Plan</button>
       </div>
@@ -29,13 +32,20 @@
         <h3>Premium Plan</h3>
         <p class="price">₹1999 / month</p>
         <ul>
-          <li>Everything in Standard</li>
-          <li>Customized Meal Plans</li>
-          <li>Unlimited support</li>
+          <li>- Wokout Plan As Per Your Goal</li>
+          <li>- Diet-Plan (Change in 15 days if need)</li>
+          <li>- Weekly Check-ins</li>
+          <li>- Proper Progress Tracking</li>
+          <li>- 24/7 Whatsapp-Support📱</li>
+          <li><b>Note :"Every diet and workout plan is carefully tailored to your health status and medical conditions to ensure safe, effective, and lasting results."</b></li>
         </ul>
         <button (click)="openModal('Premium Plan')">Choose Plan</button>
       </div>
+
+
     </div>
+
+    
 
     <app-checkout-modal
   *ngIf="isModalOpen()"

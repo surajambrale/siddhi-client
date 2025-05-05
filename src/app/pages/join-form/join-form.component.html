@@ -1,5 +1,6 @@
 <div class="form-modal">
   <form (ngSubmit)="submitForm(form)" #form="ngForm">
+    <h1>"💪 You're One Step Closer to Your Fitness Goal! 🚀"</h1>
     <input
       type="text"
       name="name"
@@ -17,7 +18,7 @@
     <textarea
       name="message"
       [(ngModel)]="formData.message"
-      placeholder="Your Message"
+      placeholder="Submit your query our team will reach out to you within 24 hours."
     ></textarea>
 
     <!-- 🔄 Submit button with loading state -->
