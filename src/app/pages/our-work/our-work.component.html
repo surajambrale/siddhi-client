@@ -1,31 +1,33 @@
 <section class="our-work">
-    <h2>Our Work</h2>
-    <p>Real results from real clients</p>
-  
-    <div class="work-grid">
-      <div class="work-card" *ngFor="let work of works">
-        <div class="images">
-          <div class="image-wrapper">
-            <img [src]="work.before" alt="Before" (click)="openModal(work.before)">
-            <span class="label">Before</span>
-          </div>
-          <div class="image-wrapper">
-            <img [src]="work.after" alt="After" (click)="openModal(work.after)">
-            <span class="label">After</span>
-          </div>
-        </div>
-        
-        <h3>{{ work.name }}</h3>
-        <p>{{ work.description }}</p>
-      </div>
-    </div>
+  <h2>Certified Students</h2><hr>
+  <p>Achievement Gallery</p>
 
-    <!-- Modal -->
+  <div class="work-grid">
+    <div class="work-card" *ngFor="let student of students">
+      <!-- Student Photo -->
+      <div class="image-wrapper">
+        <img [src]="student.photo" alt="{{ student.name }} photo" />
+        <span class="label">Student</span>
+      </div>
+
+      <!-- Certificate -->
+      <div class="image-wrapper certificate" (click)="openModal(student.certificate)">
+        <img [src]="student.certificate" alt="{{ student.name }} certificate" style="cursor: pointer;" />
+        <span class="label">Certificate ( click on certificate to view )</span>
+      </div>
+
+      <!-- Student Info -->
+      <h3>{{ student.name }}</h3>
+      <p class="course-name">{{ student.course }}</p>
+      <blockquote>{{ student.experience }}</blockquote>
+    </div>
+  </div>
+
+  <!-- Modal -->
   <div class="modal-backdrop" *ngIf="isModalOpen" (click)="closeModal()">
     <div class="modal-content" (click)="$event.stopPropagation()">
       <span class="close-btn" (click)="closeModal()">&times;</span>
-      <img [src]="selectedImage" alt="Zoomed Image" />
+      <img [src]="selectedImage" alt="Zoomed Certificate" />
     </div>
   </div>
-  </section>
-  
+</section>

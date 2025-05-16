@@ -25,7 +25,7 @@
     height: 320px;
   object-fit: cover;
   margin-bottom: 1rem;
-  border-radius: 50%;
+  border-radius: 10%;
   position: relative;
   z-index: 1;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
@@ -181,6 +181,38 @@
     }
   }
 //vide section code ends  
+
+//certificate sample scss
+.certificate-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+
+  .certificate-container {
+    max-width: 800px;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .certificate-image {
+      width: 100%;
+      max-width: 700px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+    }
+  }
+}
+
+//certificate sample scss
 
 //call to action sectrion code starts
 .cta-section {

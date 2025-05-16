@@ -1,7 +1,7 @@
 <section class="hero">
     <div class="hero-content">
       <img src="assets/images/fitnesslogo.jpg" alt="Suraj Ambrale">
-        <h1>Transform Your Body with Suraj Ambrale</h1>
+        <h1>Exercise Science By Siddhi Thakur</h1>
         <p>Your journey to fitness begins here.</p>
         <button class="cta-btn" (click)="showForm()">Join Now</button>
         <app-join-form *ngIf="formVisible" (onClose)="hideForm()"></app-join-form>
@@ -12,8 +12,9 @@
 <section class="intro">
     <div class="container">
         <h2>Why Choose Us ?</h2>
-        <p>Personalized training plans, nutrition guidance, and real transformations
-            that speak for themselves. Whether you're a beginner or advanced, we've got you.</p>
+        <p>Join the leading Exercise Science Academy where learning meets real-world fitness! From Foam Rolling to Suspension Training, our expert-led, practical courses come with recognized certifications, lifetime access, and affordable pricing. Whether you're a beginner or a pro, we help you upgrade your skills and build a strong fitness career the smart way.
+
+</p>
     </div>
 </section>
 
@@ -21,15 +22,15 @@
     <h2>What Our Clients Say</h2>
     <div class="testimonial-cards">
       <div class="card">
-        <p>"Suraj’s training changed my life! I lost 10kg in 3 months."</p>
-        <h4>- Priya Sharma</h4>
+        <p>"I took the Foam Roller course and it completely changed the way I train my clients. The content was clear, practical, and easy to apply. Highly recommend it to all fitness professionals!"</p>
+        <h4>- Divya Rawat</h4>
       </div>
       <div class="card">
-        <p>"The plans are so easy to follow and results are amazing!"</p>
+        <p>"Suspension Training certification from this academy gave me the edge I needed. The instructors are top-notch and explain every concept with real-life examples. Loved the hands-on learning!"</p>
         <h4>- Rahul Verma</h4>
       </div>
       <div class="card">
-        <p>"Great balance of motivation and discipline. Highly recommend."</p>
+        <p>"Affordable, professional, and very effective. I enrolled in two courses and both exceeded my expectations. The lifetime access feature is a big bonus!"</p>
         <h4>- Sneha Kapoor</h4>
       </div>
     </div>
@@ -51,10 +52,19 @@
     </div>
   </section>
 
+  <section class="certificate-section">
+  <div class="certificate-container">
+    <h2>Sample Certificate</h2>
+    <p>Get certified with professional recognition. Here’s what your certificate will look like:</p>
+    <img src="assets/images/sample-certificate.jpg" alt="Sample Certificate" class="certificate-image" />
+  </div>
+</section>
+
+
   <section class="cta-section">
     <div class="cta-content">
-      <h2>Ready to Transform Your Body?</h2>
-      <p>Book a free consultation with Suraj Ambrale and take the first step toward your fitness goals.</p>
+      <h2>Ready to Transform Your Career?</h2>
+      <p>Book a free consultation with Siddhi Thakur and take the first step toward your career goals.</p>
       <button class="cta-button" (click)="showForm()">Book Your Free Consult</button>
         <app-join-form *ngIf="formVisible" (onClose)="hideForm()"></app-join-form>
 
