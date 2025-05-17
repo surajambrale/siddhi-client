@@ -5,12 +5,13 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+// ✅ Allowed Origins
 const allowedOrigins = [
-  'https://siddhi-client.vercel.app', // ✅ production
-  'http://localhost:4200'                // ✅ development
+  'https://siddhi-client.vercel.app', // production
+  'http://localhost:4200'             // development
 ];
 
-// ✅ Correct CORS config
+// ✅ CORS Configuration
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -23,15 +24,24 @@ app.use(cors({
   credentials: true
 }));
 
+// ✅ Handle Preflight Requests
+app.options('*', cors());
+
+// ✅ Log incoming requests (Optional, for debugging)
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
+});
+
 // ✅ Middleware
 app.use(bodyParser.json());
 
-// ✅ MongoDB
+// ✅ Connect to MongoDB
 mongoose.connect('mongodb+srv://siddhi-thakur:siddhi-thakur@cluster0.8nqmclt.mongodb.net/siddhi?retryWrites=true&w=majority&appName=Cluster0')
   .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
+  .catch(err => console.error("MongoDB Connection Error:", err));
 
-// ✅ Schema + Route
+// ✅ Mongoose Schema & Model
 const EnquirySchema = new mongoose.Schema({
   name: String,
   phone: String,
@@ -40,17 +50,19 @@ const EnquirySchema = new mongoose.Schema({
 });
 const Enquiry = mongoose.model('Enquiry', EnquirySchema);
 
+// ✅ Routes
 app.post('/enquiries', async (req, res) => {
   try {
     const enquiry = new Enquiry(req.body);
     await enquiry.save();
     res.status(201).send({ message: 'Enquiry saved!' });
   } catch (err) {
+    console.error("Error saving enquiry:", err);
     res.status(500).send({ error: 'Error saving enquiry' });
   }
 });
 
-// ✅ Port
+// ✅ Start Server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
