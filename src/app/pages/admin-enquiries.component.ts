@@ -15,7 +15,7 @@ export class AdminEnquiriesComponent implements OnInit {
   selectedEntry: any = null;
   isLoading = false;
   isAuthorized = false;
-  API_URL = 'https://gym-website-repo.onrender.com/enquiries';
+  API_URL = 'https://siddhi-client.onrender.com/enquiries';
 
   constructor(private http: HttpClient) {}
 
