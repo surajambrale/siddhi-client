@@ -6,6 +6,7 @@ import { PricingComponent } from './pages/pricing/pricing.component';
 import { ReviewComponent } from './pages/review/review.component';
 import { VlogsComponent } from './pages/vlogs/vlogs.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { AdminEnquiriesComponent } from './pages/admin-enquiries.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -24,5 +25,6 @@ export const routes: Routes = [
     { path: 'review', component: ReviewComponent },
     { path: 'vlogs', loadComponent: () => import('./pages/vlogs/vlogs.component').then(m => m.VlogsComponent) },
     { path: 'contact', component: ContactComponent },
+    { path: 'admin', component: AdminEnquiriesComponent }
 
 ];

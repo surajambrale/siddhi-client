@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const allowedOrigins = [
-  'https://www.fitnesswithsuraj.online', // ✅ production
+  'https://siddhi-client.vercel.app', // ✅ production
   'http://localhost:4200'                // ✅ development
 ];
 
@@ -27,7 +27,7 @@ app.use(cors({
 app.use(bodyParser.json());
 
 // ✅ MongoDB
-mongoose.connect('mongodb+srv://sambrale:sambrale@cluster0.edzdvc6.mongodb.net/suraj?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect('mongodb+srv://siddhi-thakur:siddhi-thakur@cluster0.8nqmclt.mongodb.net/siddhi?retryWrites=true&w=majority&appName=Cluster0')
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
