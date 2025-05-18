@@ -36,6 +36,7 @@ mongoose.connect('mongodb+srv://siddhi-thakur:siddhi-thakur@cluster0.8nqmclt.mon
 const EnquirySchema = new mongoose.Schema({
   name: String,
   phone: String,
+  course: String,
   message: String,
   createdAt: { type: Date, default: Date.now }
 });

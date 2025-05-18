@@ -59,28 +59,4 @@
     <!-- Close -->
     <button type="button" (click)="close()">Close</button>
   </form>
-
-  <!-- Submitted Data View and CRUD -->
-  <div *ngIf="submittedForms.length > 0">
-    <h2>Submitted Queries</h2>
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Phone</th>
-        <th>Course</th>
-        <th>Message</th>
-        <th>Actions</th>
-      </tr>
-      <tr *ngFor="let entry of submittedForms; let i = index">
-        <td>{{ entry.name }}</td>
-        <td>{{ entry.phone }}</td>
-        <td>{{ entry.course }}</td>
-        <td>{{ entry.message }}</td>
-        <td>
-          <button (click)="editForm(i)">Edit</button>
-          <button (click)="deleteForm(i)">Delete</button>
-        </td>
-      </tr>
-    </table>
-  </div>
 </div>
