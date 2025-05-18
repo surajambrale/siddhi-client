@@ -1,0 +1,114 @@
+.admin-panel-container {
+  padding: 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.admin-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.access-denied p {
+  color: red;
+  text-align: center;
+}
+
+.loading,
+.no-data {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* ✅ Ensures table scrolls on small screens */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* ✅ Forces horizontal scroll if screen too narrow */
+table {
+  width: 100%;
+  min-width: 800px; // 🟢 key fix — wider than mobile to force scroll
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  white-space: nowrap;       // Prevents wrapping
+  overflow: hidden;
+  text-overflow: ellipsis;   // Truncates long text
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: 600;
+}
+
+/* Optional: Slightly darker border for better visibility */
+table, th, td {
+  border-color: #bbb;
+}
+
+/* Keep action buttons aligned and compact */
+.action-buttons button {
+  margin-right: 0.5rem;
+  white-space: nowrap;
+}
+
+/* Edit form styles */
+.edit-form {
+  background: #f9f9f9;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.edit-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-form input,
+.edit-form select,
+.edit-form textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* 📱 Mobile-specific tweaks */
+@media (max-width: 768px) {
+  .table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .edit-form form {
+    gap: 8px;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+}
