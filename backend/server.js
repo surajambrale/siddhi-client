@@ -5,12 +5,13 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+// ✅ Allowed frontend origins
 const allowedOrigins = [
-  'https://siddhi-client.vercel.app', // ✅ production
-  'http://localhost:4200'                // ✅ development
+  'https://siddhi-client.vercel.app', // Production frontend
+  'http://localhost:4200'             // Local Angular dev
 ];
 
-// ✅ Correct CORS config
+// ✅ CORS config
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -26,12 +27,12 @@ app.use(cors({
 // ✅ Middleware
 app.use(bodyParser.json());
 
-// ✅ MongoDB
+// ✅ Connect to MongoDB
 mongoose.connect('mongodb+srv://siddhi-thakur:siddhi-thakur@cluster0.8nqmclt.mongodb.net/siddhi?retryWrites=true&w=majority&appName=Cluster0')
-  .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
+  .then(() => console.log("✅ MongoDB Connected"))
+  .catch(err => console.error("❌ MongoDB connection error:", err));
 
-// ✅ Schema + Route
+// ✅ Define Schema and Model
 const EnquirySchema = new mongoose.Schema({
   name: String,
   phone: String,
@@ -40,6 +41,7 @@ const EnquirySchema = new mongoose.Schema({
 });
 const Enquiry = mongoose.model('Enquiry', EnquirySchema);
 
+// ✅ Create a new enquiry (POST)
 app.post('/enquiries', async (req, res) => {
   try {
     const enquiry = new Enquiry(req.body);
@@ -50,8 +52,38 @@ app.post('/enquiries', async (req, res) => {
   }
 });
 
-// ✅ Port
+// ✅ Get all enquiries (GET)
+app.get('/enquiries', async (req, res) => {
+  try {
+    const enquiries = await Enquiry.find().sort({ createdAt: -1 });
+    res.status(200).json(enquiries);
+  } catch (err) {
+    res.status(500).send({ error: 'Error fetching enquiries' });
+  }
+});
+
+// ✅ Update an enquiry (PUT)
+app.put('/enquiries/:id', async (req, res) => {
+  try {
+    const updated = await Enquiry.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.status(200).json(updated);
+  } catch (err) {
+    res.status(500).send({ error: 'Error updating enquiry' });
+  }
+});
+
+// ✅ Delete an enquiry (DELETE)
+app.delete('/enquiries/:id', async (req, res) => {
+  try {
+    await Enquiry.findByIdAndDelete(req.params.id);
+    res.status(200).send({ message: 'Enquiry deleted successfully' });
+  } catch (err) {
+    res.status(500).send({ error: 'Error deleting enquiry' });
+  }
+});
+
+// ✅ Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-}); 
+  console.log(`🚀 Server running on port ${PORT}`);
+});
