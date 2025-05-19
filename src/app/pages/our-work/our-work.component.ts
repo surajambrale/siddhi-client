@@ -11,9 +11,9 @@ import { CommonModule } from '@angular/common';
 export class OurWorkComponent {
   students = [
     {
-      photo: '/assets/images/dummyimg.jpeg',
+      photo: '/assets/images/grouppic.jpeg',
       certificate: '/assets/images/sample-certificate.jpg',
-      name: 'Aarav Mehta',
+      name: 'Group Photo',
       course: 'Suspension Training Certification',
       experience: '“This course pushed my limits and made me stronger mentally and physically. Amazing experience!”'
     },
