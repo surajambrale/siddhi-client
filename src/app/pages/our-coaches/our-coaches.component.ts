@@ -13,7 +13,7 @@ export class OurCoachesComponent {
   coaches = [
     {
       name: 'Siddhi Thakur',
-      role: 'Human Movement Specialist',
+      role: 'Founder',
       image: 'assets/images/sidhhi.jpg',
       specialization: 'Human Movement Specialist',
       certification: 'Human Movement Specialist',
@@ -24,12 +24,12 @@ export class OurCoachesComponent {
       }
     },
     {
-      name: 'Suraj Ambrale',
-      role: 'Yoga Instructor',
-      image: 'assets/images/dummyimg.jpeg',
-      specialization: 'Yoga & Meditation',
+      name: 'Akshay',
+      role: 'Co-Founder',
+      image: 'assets/images/akshay.jpeg',
+      specialization: 'Foam and Techniques Coach',
       certification: 'Nutritionist, Advanced Fitness Trainer',
-      bio: `Suraj Ambrale blends the art of yoga and meditation with science-based fitness training. With his background in nutrition and fitness, he offers a holistic wellness experience that balances the body and mind. His sessions are calming, energizing, and transformational.`,
+      bio: `Akshay blends the art of yoga and meditation with science-based fitness training. With his background in nutrition and fitness, he offers a holistic wellness experience that balances the body and mind. His sessions are calming, energizing, and transformational.`,
       social: {
         instagram: 'https://instagram.com/anita',
         facebook: ''
