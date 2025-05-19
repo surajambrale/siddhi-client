@@ -2,40 +2,42 @@
 
 <!-- Access denied message -->
 <div *ngIf="!isAuthorized">
-  <p style="color: red;">Access Denied. Please refresh and try with correct password.</p>
+  <p class="error-message">Access Denied. Please refresh and try with correct password.</p>
 </div>
 
 <!-- Main Admin Panel -->
-<div *ngIf="isAuthorized">
+<div *ngIf="isAuthorized" class="admin-container">
   <div *ngIf="isLoading">Loading enquiries...</div>
 
   <!-- Table of Enquiries -->
-  <table *ngIf="!isLoading && enquiries.length > 0" border="1" cellpadding="10">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Phone</th>
-        <th>Course</th>
-        <th>Message</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let entry of enquiries">
-        <td>{{ entry.name }}</td>
-        <td>{{ entry.phone }}</td>
-        <td>{{ entry.course }}</td>
-        <td>{{ entry.message }}</td>
-        <td>
-          <button (click)="edit(entry)">Edit</button>
-          <button (click)="delete(entry)">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-wrapper" *ngIf="!isLoading && enquiries.length > 0">
+    <table border="1" cellpadding="10">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Course</th>
+          <th>Message</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of enquiries">
+          <td>{{ entry.name }}</td>
+          <td>{{ entry.phone }}</td>
+          <td>{{ entry.course }}</td>
+          <td>{{ entry.message }}</td>
+          <td>
+            <button (click)="edit(entry)">Edit</button>
+            <button (click)="delete(entry)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <!-- Edit Form -->
-  <div *ngIf="selectedEntry" style="margin-top: 20px;">
+  <div *ngIf="selectedEntry" class="edit-form">
     <h3>✏️ Edit Enquiry</h3>
     <form #editForm="ngForm" (ngSubmit)="save(editForm)">
       <input name="name" [(ngModel)]="selectedEntry.name" required placeholder="Name" />
@@ -46,7 +48,7 @@
         [(ngModel)]="selectedEntry.message"
         placeholder="Message"
       ></textarea>
-      <div style="margin-top: 10px;">
+      <div class="form-buttons">
         <button type="submit">Save</button>
         <button type="button" (click)="cancelEdit()">Cancel</button>
       </div>
@@ -54,7 +56,7 @@
   </div>
 
   <!-- No Data Message -->
-  <div *ngIf="!isLoading && enquiries.length === 0" style="margin-top: 20px;">
+  <div *ngIf="!isLoading && enquiries.length === 0" class="no-data">
     <p>No enquiries found.</p>
   </div>
 </div>
