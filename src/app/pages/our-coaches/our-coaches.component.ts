@@ -15,8 +15,8 @@ export class OurCoachesComponent {
       name: 'Siddhi Thakur',
       role: 'Founder',
       image: 'assets/images/sidhhi.jpg',
-      specialization: 'Human Movement Specialist',
-      certification: 'Human Movement Specialist',
+      specialization: 'Bachelor’s in Biochemistry Masters in Human Movements',
+      certification: '',
       bio: `Siddhi Thakur is an expert in human movement, known for her deep understanding of biomechanics and injury prevention. Her approach focuses on improving posture, mobility, and functional movement patterns to help clients move better, feel better, and perform at their best.`,
       social: {
         instagram: 'https://instagram.com/suraj',
@@ -27,9 +27,9 @@ export class OurCoachesComponent {
       name: 'Akshay',
       role: 'Co-Founder',
       image: 'assets/images/akshay.jpeg',
-      specialization: 'Foam and Techniques Coach',
-      certification: 'Nutritionist, Advanced Fitness Trainer',
-      bio: `Akshay blends the art of yoga and meditation with science-based fitness training. With his background in nutrition and fitness, he offers a holistic wellness experience that balances the body and mind. His sessions are calming, energizing, and transformational.`,
+      specialization: 'Mumbai Shree Title Winner | Mr Maharashtra Silver Medalist | Mr India Silver Medalist',
+      certification: '',
+      bio: `🏆 Mumbai Shree Title Winner • Mr. Maharashtra Silver Medalist • Mr. India Silver Medalist. With a legacy carved in sweat and steel, he’s not just a bodybuilder — he’s a champion. From conquering the Mumbai Shree stage to earning national glory with Mr. Maharashtra and Mr. India silver medals, his journey reflects sheer dedication, discipline, and unmatched passion for fitness. A true icon for aspiring athletes.`,
       social: {
         instagram: 'https://instagram.com/anita',
         facebook: ''
