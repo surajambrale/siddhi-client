@@ -5,8 +5,11 @@
       <img [src]="coach.image" [alt]="coach.name" />
       <h3>{{ coach.name }}</h3>
       <p>{{ coach.role }}</p>
-      <small> {{ coach.specialization }}</small><br />
-      <small> {{ coach.certification }}</small><br />
+
+      <!-- ✅ Updated with [innerHTML] to support line break -->
+      <small [innerHTML]="coach.specialization"></small><br />
+      <small>{{ coach.certification }}</small><br />
+
       <h3><b>Tap On Image to See Trainer Information</b></h3>
       <div class="social-links">
         <a *ngIf="coach.social.instagram" [href]="coach.social.instagram" target="_blank">

@@ -11,22 +11,22 @@ import { Component } from '@angular/core';
 export class ReviewComponent {
   reviews = [
     {
-      name: 'Siddhi',
-      review: 'siddhi is an excellent fitness trainer. His effort for making me fit is awesome. His knowledge about maintaining good health and sharing & communication is really helping out a lot to stay fit. In addition to fitness he also knows and share nutrition diet plan for having good health. i appreciate his dedication and admire him for the same.',
+      name: 'Prajakta Jagtap',
+      review: 'I really enjoyed the fitness course with siddhi Mam🌟 It was super helpful, motivating, and easy to follow. Your way of teaching is amazing and made every session fun. Thank you for such a great experience! 💪 And one more thing she’s really very caring person.',
       rating: 5,
-      image: 'assets/images/sidhhi.jpg' 
+      image: 'assets/images/prajakta-jagtap.jpeg' 
     },
     {
-      name: 'Siddhi',
-      review: 'Your personalized workouts, nutritional advice, and constant motivation have been instrumental in helping me push beyond my limits and reach new heights in my fitness journey. Your passion for what you do is truly inspiring, and it has motivated me to stay committed and focused. I appreciate your dedication to helping me achieve my goals, and I am grateful for the positive impact you have had on my life. Thank you for pushing me to be the best version of myself and for believing in my potential every step of the way.',
+      name: 'Lalit Ruke',
+      review: 'Overall, I found this course very useful and engaging. The instructor did a great job of explaining concepts in a way that was easy to understand.She is Very Passionate Teacher and very knowledgeable. I learned a lot from the practical exercises and theory. The course met my expectations and provided me with valuable knowledge and skills. The course material were well organized and easy to follow.',
       rating: 4,
-      image: 'assets/images/sidhhi.jpg'
+      image: 'assets/images/lalit.jpeg'
     },
     {
-      name: 'Siddhi',
-      review: 'Training was very good. Sir paid attention to every detail everyday. I was someone wo would find difficulty in even lifting 5 kg but due to the proper training by sir my stamina increased everyday and I was able to lift even 65-70 kgs. The diet and was also comfortable to follow. The workouts were breathtaking yet enjoyable at the same time. Overall i gained my confidence, my stamina increased and my weight also went down properly.',
+      name: 'Tushar Kadam',
+      review: 'I have really enjoyed the training courses with siddhi ma\'am I felt very welcome and relaxed during the time I progress in my knowledge and skills and the teaching really enhanced this..tysm mam 😊',
       rating: 5,
-      image: 'assets/images/sidhhi.jpg'
+      image: 'assets/images/tushar.jpeg'
     }
 
   ];

@@ -10,14 +10,14 @@ import { SafeUrlPipe } from '../../safe-url.pipe';
 })
 export class VlogsComponent {
   vlogs = [
+    // {
+    //   title: 'Full Body Fat Burn Routine',
+    //   description: 'A killer fat-burn workout you can do at home!',
+    //   videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+    // },
     {
-      title: 'Full Body Fat Burn Routine',
-      description: 'A killer fat-burn workout you can do at home!',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
-    },
-    {
-      title: 'Shoulder Workout',
-      description: 'Build strong delts with this gym routine.',
+      title: 'We are Working On It',
+      description: 'thanks for your patience!.',
       videoUrl: 'https://www.youtube.com/embed/some_other_id'
     }
   ];
