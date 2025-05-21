@@ -24,7 +24,7 @@ export class OurCoachesComponent {
       }
     },
     {
-      name: 'Akshay',
+      name: 'Akshay Bhalekar',
       role: 'Co-Founder',
       image: 'assets/images/akshay.jpeg',
       specialization: 'Mumbai Shree Title Winner <br> Mr Maharashtra Silver Medalist <br> Mr India Silver Medalist',

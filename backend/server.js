@@ -7,7 +7,8 @@ const app = express();
 
 // ✅ Allowed frontend origins
 const allowedOrigins = [
-  'https://siddhi-client.vercel.app', // Production frontend
+  // 'https://siddhi-client.vercel.app', 
+  'http://www.iteachexercisescience.in',
   'http://localhost:4200'             // Local Angular dev
 ];
 
