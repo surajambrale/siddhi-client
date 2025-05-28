@@ -17,20 +17,20 @@ export class OurWorkComponent {
       course: 'Suspension Training Certification',
       experience: '“This course pushed my limits and made me stronger mentally and physically. Amazing experience!”'
     },
-    {
-      photo: '/assets/images/dummyimg.jpeg',
-      certificate: '/assets/images/sample-certificate.jpg',
-      name: 'Aarav Mehta',
-      course: 'Suspension Training Certification',
-      experience: '“This course pushed my limits and made me stronger mentally and physically. Amazing experience!”'
-    },
-    {
-      photo: '/assets/images/dummyimg.jpeg',
-      certificate: '/assets/images/sample-certificate.jpg',
-      name: 'Aarav Mehta',
-      course: 'Suspension Training Certification',
-      experience: '“This course pushed my limits and made me stronger mentally and physically. Amazing experience!”'
-    },
+    // {
+    //   photo: '/assets/images/dummyimg.jpeg',
+    //   certificate: '/assets/images/sample-certificate.jpg',
+    //   name: 'Aarav Mehta',
+    //   course: 'Suspension Training Certification',
+    //   experience: '“This course pushed my limits and made me stronger mentally and physically. Amazing experience!”'
+    // },
+    // {
+    //   photo: '/assets/images/dummyimg.jpeg',
+    //   certificate: '/assets/images/sample-certificate.jpg',
+    //   name: 'Aarav Mehta',
+    //   course: 'Suspension Training Certification',
+    //   experience: '“This course pushed my limits and made me stronger mentally and physically. Amazing experience!”'
+    // },
   ];
 
   isModalOpen = false;
