@@ -24,7 +24,7 @@ export class JoinFormComponent implements OnInit {
   editId: string | null = null;
   isSubmitting = false;
 
-  courses = ['Suspension Training', 'Foam Roller'];
+  courses = ['Suspension Training', 'Foam Roller', 'Resistance Band', 'Kettle Bell', 'Nutrition', 'Personal Trainer', 'Special Population'];
   private API_URL = 'https://siddhi-client.onrender.com/enquiries';
 
   constructor(private http: HttpClient) {}
