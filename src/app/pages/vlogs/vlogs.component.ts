@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { SafeUrlPipe } from '../../safe-url.pipe';
 
 @Component({
   selector: 'app-vlogs',
-  imports: [CommonModule, SafeUrlPipe],
+  imports: [CommonModule],
   templateUrl: './vlogs.component.html',
   styleUrl: './vlogs.component.scss'
 })
